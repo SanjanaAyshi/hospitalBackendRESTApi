@@ -23,7 +23,7 @@ class Doctor(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     image=models.ImageField(upload_to='doctor/image/')
     designation=models.ManyToManyField(Designation)
-    availableTime=models.ForeignKey(Availability, on_delete=models.CASCADE)
+    availableTime=models.ManyToManyField(Availability)
     specialization=models.ManyToManyField(Specialization)
     fee=models.IntegerField()
     meetLink=models.CharField( max_length=18)
